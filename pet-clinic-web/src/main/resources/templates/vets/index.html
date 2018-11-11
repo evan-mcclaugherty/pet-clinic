@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'vets')}">
 <head>
     <meta charset="UTF-8">
     <title>Pet Clinic</title>
 </head>
 <body>
-    <h1 th:text="'Vet Page'">Pet Clinic</h1>
-    <ul th:each="vet : ${vets}">
-        <li th:text="${vet.getId()}"></li>
-        <li th:text="${vet.getFirstName()}"></li>
-        <li th:text="${vet.getLastName()}"></li>
-    </ul>
+<h2>Veterinarians</h2>
+
+<table id="vets" class="table table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Specialties</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="vet : ${vets}">
+        <td th:text="${vet.firstName + ' ' + vet.lastName}"></td>
+<!--        <td><span th:each="specialty : ${vet.specialties}"
+                  th:text="${specialty.name + ' '}" /> <span
+                th:if="${vet.nrOfSpecialties == 0}">none</span></td>-->
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
