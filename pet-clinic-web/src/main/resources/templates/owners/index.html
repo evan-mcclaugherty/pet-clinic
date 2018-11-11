@@ -7,7 +7,9 @@
 <body>
     <h1 th:text="'Owners Page'">Pet Clinic</h1>
     <ul th:each="owner : ${owners}">
-        <li th:text="${owner.getFirstName()} - ${owner.getLastName()}"></li>
+        <li th:text="${owner?.getId()}"></li>
+        <li th:text="${owner?.getFirstName()}"></li>
+        <li th:text="${owner?.getLastName()}"></li>
     </ul>
 </body>
 </html>
