@@ -6,5 +6,10 @@
 </head>
 <body>
     <h1 th:text="'Vet Page'">Pet Clinic</h1>
+    <ul th:each="vet : ${vets}">
+        <li th:text="${vet.getId()}"></li>
+        <li th:text="${vet.getFirstName()}"></li>
+        <li th:text="${vet.getLastName()}"></li>
+    </ul>
 </body>
 </html>
