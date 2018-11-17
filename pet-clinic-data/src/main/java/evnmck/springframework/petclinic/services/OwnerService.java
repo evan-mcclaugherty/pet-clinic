@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Service
-@Profile("springDataJPA")
+@Profile({"default", "springDataJPA"})
 public class OwnerService implements CrudService<Owner, Long> {
     private final OwnerRepository ownerRepository;
 
