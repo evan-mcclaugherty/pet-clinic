@@ -2,12 +2,14 @@ package evnmck.springframework.petclinic.services;
 
 import evnmck.springframework.petclinic.model.Owner;
 import evnmck.springframework.petclinic.repositories.OwnerRepository;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Service
+@Profile("springDataJPA")
 public class OwnerService implements CrudService<Owner, Long> {
     private final OwnerRepository ownerRepository;
 

@@ -2,10 +2,14 @@ package evnmck.springframework.petclinic.services;
 
 import evnmck.springframework.petclinic.model.Vet;
 import evnmck.springframework.petclinic.repositories.VetRepository;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Service
+@Profile("springDataJPA")
 public class VetService implements CrudService<Vet, Long> {
     private final VetRepository vetRepository;
 
