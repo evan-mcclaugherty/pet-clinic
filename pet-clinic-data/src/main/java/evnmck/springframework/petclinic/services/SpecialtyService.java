@@ -26,7 +26,7 @@ public class SpecialtyService implements CrudService<Specialty, Long> {
 
     @Override
     public Specialty save(Specialty object) {
-        specialtyRepository.save(object);
+        return specialtyRepository.save(object);
     }
 
     @Override
