@@ -71,21 +71,20 @@ public class DataLoader implements CommandLineRunner {
         owner1.getPets().add(owner1Pet);
         ownerService.save(owner1);
 
-        Owner ownder2 = Owner.builder()
-                .firstName("Sean")
-                .address("234 Big Bird")
-                .telephone("243543234")
-                .city("Money")
-                .lastName("Carter")
-                .build();
+        Owner owner2 = new Owner();
+        owner2.setFirstName("Fiona");
+        owner2.setLastName("Glenanne");
+        owner2.setAddress("123 Brickerel");
+        owner2.setCity("Miami");
+        owner2.setTelephone("1231231234");
 
         Pet owner2Pet = new Pet();
-        owner2Pet.setOwner(ownder2);
+        owner2Pet.setOwner(owner2);
         owner2Pet.setPetType(savedCatType);
         owner2Pet.setBirthday(LocalDate.now());
         owner2Pet.setName("Biscuits");
-        ownder2.getPets().add(owner2Pet);
-        ownerService.save(ownder2);
+        owner2.getPets().add(owner2Pet);
+        this.ownerService.save(owner2);
 
         Visit visit1 = new Visit(LocalDate.now(),"Got my balls cutoff", owner2Pet);
         visitService.save(visit1);
